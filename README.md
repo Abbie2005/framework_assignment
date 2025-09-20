@@ -1,87 +1,70 @@
-Python Frameworks Assignment: CORD-19 Data Explorer
-Overview
+# CORD-19 Data Explorer
 
-This project explores the CORD-19 research dataset and creates a simple Streamlit app to display insights. The goal is to practice data loading, cleaning, analysis, and visualization using Python.
+This project analyzes COVID-19 research papers from the CORD-19 dataset and visualizes patterns using Python. A simple Streamlit app is included to explore the data interactively.
 
-The assignment focuses on:
+---
 
-1. Loading and exploring a dataset
-2. Cleaning and preparing the data
-3. Performing basic analysis
-4. Creating visualizations
-   5.Building a simple interactive web app with Streamlit
+## Project Structure
+Frameworks_Assignment/
+│
+├── cord19_analysis.py # Main Python script for analysis
+├── README.md # Project documentation
+├── .gitignore # Ignores datasets like CSV
+└── (other Python scripts or visualization images)
 
-Dataset
 
-The dataset used is metadata.csv from the CORD-19 dataset, which contains information about COVID-19 research papers:
+---
 
-Paper titles and abstracts
-Publication dates
-Authors and journals
-Source information
+## Dataset
 
-Note: The full dataset is large. In this project, I worked with a subset of the metadata file.
+This project uses the `metadata.csv` file from the [CORD-19 Dataset](https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge).  
 
-Dataset source: CORD-19 on Kaggle
+**Important:** The dataset is **not included in this repo** due to its large size.
 
-Tools & Libraries
+**To run this project locally:**
+1. Download `metadata.csv` from Kaggle.
+2. Place it in the root of the project folder (same folder as `cord19_analysis.py`).
 
-Python 3.7+
-pandas – for data manipulation
-matplotlib / seaborn – for visualizations
-Streamlit – for interactive web app
+---
 
-Install required packages:
+## How to Run
+
+1. Install dependencies:
+
+```bash
 pip install pandas matplotlib seaborn streamlit
 
-Project Structure
-Frameworks_Assignment/
-├─ cord19_analysis.py # Main Python script for analysis
-├─ cord19_app.py # Streamlit app script
-├─ README.md # This file
-├─ .gitignore # Ignore large files like CSV
+Run the analysis script:
+python cord19_analysis.py
 
-Note: The metadata.csv dataset is not included in this repository due to its size. Download it from Kaggle if needed.
+(Optional) Run the Streamlit app:
+streamlit run cord19_analysis.py
 
 Features
 
-Data Loading & Exploration
-Load CSV into a pandas DataFrame
-Inspect the first few rows using .head()
-Check data types and missing values
-Data Cleaning & Preparation
-Handle missing data by removing or filling values
-Convert date columns to datetime
-Extract publication year and create additional columns if needed
-Analysis & Visualization
-Count papers by year
-Identify top journals
-Explore frequent words in paper titles
+Load and explore the dataset using Pandas
+Clean and prepare the data (handle missing values, extract publication year, etc.)
+Perform basic analysis (papers by year, top journals, word frequency)
+Visualize results using Matplotlib and Seaborn
+Interactive exploration via Streamlit
 
-Visualize:
+Notes
 
-Number of publications over time (line chart)
-Top journals (bar chart)Word cloud of titles
-Distribution of paper counts by source
-Streamlit Application
-Interactive layout with title and description
-Slider to filter by publication year
-Display visualizations based on user selection
-Show a sample of the dataset
+The CSV dataset is required locally to run scripts.
+This setup keeps the GitHub repo lightweight and focused on code.
+Anyone cloning the repo can download the dataset from Kaggle and run the project.
 
-How to Run
 
-Run the analysis script:
+---
 
-python cord19_analysis.py
+Next Steps for You:
 
-Run the Streamlit app:
+1. Save this `.gitignore` and `README.md` in your project folder.  
+2. Stage and commit them:
 
-streamlit run cord19_app.py
+```bash
+git add .gitignore README.md
+git commit -m "Add .gitignore and update README with dataset instructions"
 
-Make sure metadata.csv is in the same folder or update the script path accordingly.
-
-Notes & Reflection
-Large datasets are not included in the repo to prevent push errors.
-Using .gitignore helps avoid pushing unnecessary files.
-This assignment helped practice data manipulation, visualization, and building simple interactive apps.
+Push to GitHub:
+git push -u origin main
